@@ -12,12 +12,8 @@ body{
     color: #24292e;
     font-family: 'Segoe UI', sans-serif;
     max-width: 1012px;
-    margin: 16px auto;
-    padding: 0;
-}
-
-.main{
-    
+    margin: 0 auto;
+    padding: 16px;
 }
 
 ul{

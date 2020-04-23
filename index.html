@@ -9,132 +9,44 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <!-- Place this tag in your head or just before your close body tag. -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>git/blog</title>
+    <script async defer src="js/script.js"></script>
   </head>
   <body>
-      <!-- header -->
-      <header>
-        <span class="header__endpoint">
-          <i class="material-icons header__icon">book</i>
-          <a class="header__user" href="https://github.com/Namysh" target="_blank">Namysh</a>
-          /
-          <a class="header__repo" href="#">repo</a>
-        </span>
+    <!-- header -->
+    <header id="header"></header>
 
-        <span class="header__button">
-          <a
-            class="github-button"
-            href="https://github.com/Namysh/reposiblog"
-            data-icon="octicon-star"
-            data-size="large"
-            data-show-count="true"
-            aria-label="Star Namysh/reposiblog on GitHub"
-            >Star</a
-          >
-        </span>
-      </header>
+    <!-- nav -->
+    <nav class="box">
+      <ul id="nav__list"></ul>
+    </nav>
 
-      <!-- nav -->
-      <nav class="box">
-        <ul id="nav__list"></ul>
-      </nav>
+    <!-- page content -->
+    <section class="box" id="replacable"></section>
 
-      <!-- page content -->
-      <section class="box" id="replacable"></section>
-
-    <script>
+    <script type="text/javascript">
       var configurationFileContent;
       var currentPage;
 
-      (async () => {
+      window.onload = async () => {
         document.body.style.filter = "blur(10px)";
 
         // Chargement fichier config
         await loadConfigurationFile();
+        // Génération du header
+        await generateHeader();
         // Chargement menu navigation
         await generateNavigation(configurationFileContent.navigationItems);
         // Initialisation du premier onglet selectionné
         await initBlog(configurationFileContent.navigationItems);
-
+        // On charge le boutons 'star' de Github et on affiche le blog
+        await initGithubButton()
+        
         document.body.style.filter = "blur(0px)";
-      })();
-
-      // Initialisé le blog
-      async function initBlog(navItems) {
-        currentPage = document.getElementById("nav__list").firstElementChild;
-        console.log(currentPage);
-        currentPage.classList.toggle("nav__item--selected");
-        document.getElementById("replacable").innerHTML = await getHtmlFile(
-          navItems[0].template
-        );
-      }
-
-      // Charger le fichier de configuration
-      async function loadConfigurationFile() {
-        configurationFileContent = await fetch("config.json").then((res) =>
-          res.json()
-        );
-      }
-
-      // Récupèrer le contenu d'un fichier HTML
-      async function getHtmlFile(url) {
-        return await fetch(url).then((res) => res.text());
-      }
-
-      // Générer le menu de navigation
-      async function generateNavigation(navItems, inFolder = false) {
-        const navigationItemTemplate = await fetch(
-          "template/navigation_item.html"
-        ).then((res) => res.text());
-        const navigationList = document.getElementById("nav__list");
-        navigationList.innerHTML = "";
-        if (inFolder) {
-          const templateH = await fetch(
-            "template/navigation_back.html"
-          ).then((res) => res.text());
-          const htmlToDOM = document.createElement(null);
-          htmlToDOM.innerHTML = templateH;
-          const firstChild = htmlToDOM.firstChild;
-          firstChild.addEventListener("click", async () => {
-            await generateNavigation(
-              configurationFileContent.navigationItems,
-              false
-            );
-            initBlog(configurationFileContent.navigationItems);
-          });
-          navigationList.appendChild(htmlToDOM.firstChild);
-        }
-
-        for (const item of navItems) {
-          let html = navigationItemTemplate;
-
-          html = html.replace(
-            /{{icon}}/,
-            item.navigation ? "folder" : "description"
-          );
-          html = html.replace(/{{content}}/, item.content);
-          html = html.replace(/{{message}}/, item.message);
-          html = html.replace(/{{age}}/, item.age);
-          const htmlToDOM = document.createElement(null);
-          htmlToDOM.innerHTML = html;
-          const firstChild = htmlToDOM.firstChild;
-          firstChild.addEventListener("click", async () => {
-            if (item.navigation) {
-              await generateNavigation(item.navigation, true);
-              initBlog(item.navigation);
-              return;
-            }
-            const container = document.getElementById("replacable");
-            container.innerHTML = await getHtmlFile(item.template);
-            firstChild.classList.toggle("nav__item--selected");
-            currentPage.classList.toggle("nav__item--selected");
-            currentPage = firstChild;
-          });
-          navigationList.appendChild(htmlToDOM.firstChild);
-        }
-      }
+        
+      };
     </script>
+
+
   </body>
 </html>
