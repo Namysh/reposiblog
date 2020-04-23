@@ -13,20 +13,8 @@
             "template": "view/readme.html"
         },
         {
-            "content": "a-propos.html",
-            "message": "A propos de moi",
-            "age": "il y a 1 jour",
-            "template": "view/a-propos.html"
-        },
-        {
-            "content": "contact.html",
-            "message": "Vous voulez me contacter ?",
-            "age": "il y a 1 jour",
-            "template": "view/contact.html"
-        },
-        {
             "content": "veille-technologique",
-            "message": "Répertoire de mes veilles technologiques",
+            "message": "Mes différentes veilles technologiques",
             "age": "il y a 1 jour",
             "navigation" : [
                 {
@@ -45,50 +33,50 @@
         },
         {
             "content": "stage",
-            "message": "Resumé de mes stages",
+            "message": "Mes différents stages",
             "age": "il y a 1 jour",
             "navigation" : [
                 {
                     "content": "stage-1.html",
                     "message": "Mon premier stage",
-                    "age": "il y a 1 jour",
+                    "age": "il y a 12 mois",
                     "template": "view/stage/stage1.html"
                 },
                 {
                     "content": "stage-2.html",
                     "message": "Mon deuxième stage",
-                    "age": "il y a 1 jour",
+                    "age": "il y a 4 mois",
                     "template": "view/stage/stage2.html"
                 }
             ]
         },
         {
             "content": "ppe",
-            "message": "Les PPE que j'ai fait durant ces deux années de BTS SIO",
+            "message": "Mes différents projets personnels encadrés",
             "age": "il y a 1 jour",
             "navigation" : [
                 {
                     "content": "ppe1.html",
                     "message": "Premier PPE",
-                    "age": "il y a 1 jour",
+                    "age": "il y a 15 mois",
                     "template": "view/ppe/ppe1.html"
                 },
                 {
                     "content": "ppe2.html",
                     "message": "Deuxième PPE",
-                    "age": "il y a 1 jour",
+                    "age": "il y a 12 mois",
                     "template": "view/ppe/ppe2.html"
                 },
                 {
                     "content": "ppe3.html",
                     "message": "Troisième PPE",
-                    "age": "il y a 1 jour",
+                    "age": "il y a 5 mois",
                     "template": "view/ppe/ppe3.html"
                 },
                 {
                     "content": "ppe4.html",
                     "message": "Quatrième PPE",
-                    "age": "il y a 1 jour",
+                    "age": "il y a 5 jours",
                     "template": "view/ppe/ppe4.html"
                 }
             ]

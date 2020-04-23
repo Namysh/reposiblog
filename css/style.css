@@ -4,9 +4,14 @@
     box-sizing: border-box;
 }
 
+html{
+    overflow-y: scroll;
+}
+
 *::selection {
     background-color: rgba(0, 0, 255, 0.1);
 }
+
 
 body{
     color: #24292e;

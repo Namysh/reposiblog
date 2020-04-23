@@ -12,7 +12,7 @@
     <title>git/blog</title>
     <script async defer src="js/script.js"></script>
   </head>
-  <body>
+  <body style="filter: blur(50px)">
     <!-- header -->
     <header id="header"></header>
 
@@ -29,7 +29,6 @@
       var currentPage;
 
       window.onload = async () => {
-        document.body.style.filter = "blur(10px)";
 
         // Chargement fichier config
         await loadConfigurationFile();
@@ -40,9 +39,10 @@
         // Initialisation du premier onglet selectionné
         await initBlog(configurationFileContent.navigationItems);
         // On charge le boutons 'star' de Github et on affiche le blog
-        await initGithubButton()
-        
+        await initGithubButton();
+          
         document.body.style.filter = "blur(0px)";
+        
         
       };
     </script>
