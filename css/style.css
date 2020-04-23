@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+*::selection {
+    background-color: rgba(0, 0, 255, 0.1);
+}
+
+body{
+    color: #24292e;
+    font-family: 'Segoe UI', sans-serif;
+    max-width: 1012px;
+    margin: 16px auto;
+    padding: 0;
+}
+
+.main{
+    
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+.box{
+    background-color: #fff;
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
+    margin-bottom: 16px;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.main__header{
+    background-color: #f6f8fa;
+    border: 1px solid #d1d5da;
+    border-radius: 3px 3px 0 0;
+    margin: -1px -1px 0 -1px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+
+}
+
+.main__content h1{
+    padding-bottom: .3em;
+    border-bottom: 1px solid #eaecef
+}
+
+.main__content{
+    padding: 32px;
+}
+
+.main__content > *:first-child{
+    margin-top: 0;
+}
+
+.main__header__title{
+    font-size: 14px;
+    font-weight: 600;
+    color: #24292e;
+
+}
+
+.main__icon{
+    vertical-align: text-bottom;
+    font-size: 16px!important;
+}
+
+/* Header */
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.header__endpoint{
+    font-size: 18px!important;
+}
+
+.header__icon{
+    color: #959da5;
+    vertical-align: text-bottom;    
+}
+
+.header__user{
+    color: #0366d6;
+    text-decoration: none;
+}
+
+.header__repo{
+    color: #0366d6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Navigation */
+.nav__item{
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr;
+    padding: 8px 20px;
+    background: #fff;
+    color: #0366d6;
+}
+
+.nav__item:hover{
+    background: #f6f8fa;
+}
+
+.nav__item--selected{
+    background: #f6f8fa;
+
+}
+
+.nav__item__icon{
+    color: #6b8eb6;
+    vertical-align: text-bottom;
+    font-size: 16px!important;
+}
+
+.content:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.age{
+    justify-self: end;
+    color: #6a737d;
+}
+
+.message{
+    color: #6a737d;
+}
