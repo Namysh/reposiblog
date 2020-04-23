@@ -1,4 +1,10 @@
 {
+    "header": {
+        "user": "Namysh",
+        "repository": "reposiblog",
+        "template": "template/header.html"
+
+    },
     "navigationItems": [
         {
             "content": "README.md",
